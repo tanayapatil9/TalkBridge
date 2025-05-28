@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TalkBridge - Language Courses</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Background image with dark overlay */
+      background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .course-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #007BFF;
+    }
+
+    img {
+  width: 300px;   /* smaller width */
+  height: auto;   /* keep aspect ratio */
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+    .course-button {
+      display: block;
+      margin: 15px auto;
+      padding: 14px 25px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      width: 80%;
+      max-width: 400px;
+      transition: background-color 0.3s ease;
+    }
+
+    .course-button:hover {
+      background-color: #0056b3;
+    }
+
+    .back-button {
+      margin-top: 30px;
+    }
+
+    .back-button button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #6c757d;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button button:hover {
+      background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+  <div class="course-container">
+    <h1>📚 Learn Languages with TalkBridge</h1>
+    <img src="https://img.freepik.com/free-vector/online-language-translation-service-illustration_33099-2124.jpg" alt="Language Learning Illustration" />
+
+    <a class="course-button" href="https://www.coursera.org/courses?query=english%20speaking" target="_blank" rel="noopener noreferrer">📘 English Courses on Coursera</a>
+    <a class="course-button" href="https://www.udemy.com/topic/spanish-language/" target="_blank" rel="noopener noreferrer">📗 Spanish Courses on Udemy</a>
+    <a class="course-button" href="https://www.coursera.org/courses?query=french%20language" target="_blank" rel="noopener noreferrer">📙 French Courses on Coursera</a>
+    <a class="course-button" href="https://www.udemy.com/topic/hindi-language/" target="_blank" rel="noopener noreferrer">📕 Hindi Courses on Udemy</a>
+    <a class="course-button" href="https://www.coursera.org/courses?query=german%20language" target="_blank" rel="noopener noreferrer">📒 German Courses on Coursera</a>
+    <a class="course-button" href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer">📱 Practice on Duolingo</a>
+
+    <div class="back-button">
+      <button onclick="window.location.href='index.html'">⬅️ Back to Home</button>
+    </div>
+  </div>
+</body>
+</html>

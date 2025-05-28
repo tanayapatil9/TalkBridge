@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TalkBridge - Duolingo Integration</title>
+  <style>
+    /* Background setup with overlay */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: url('https://static.duolingo.com/images/homepage/background@2x.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: #fff;
+    }
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .duolingo-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2.8rem;
+      color: #58cc02;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    img {
+      max-width: 70%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .duolingo-button {
+      display: inline-block;
+      margin: 10px 0 20px;
+      padding: 15px 30px;
+      font-size: 1.25rem;
+      background-color: #58cc02;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(88, 204, 2, 0.6);
+      transition: background-color 0.3s ease;
+      font-weight: 700;
+    }
+    .duolingo-button:hover {
+      background-color: #45a000;
+      box-shadow: 0 7px 20px rgba(69, 160, 0, 0.8);
+    }
+
+    .back-button {
+      margin-top: 15px;
+    }
+
+    .back-button button {
+      padding: 12px 25px;
+      background-color: #666;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .back-button button:hover {
+      background-color: #444;
+    }
+
+    /* Simple fade in animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="duolingo-container">
+    <h1>🦉 Practice with Duolingo</h1>
+    <p>Improve your communication skills with fun, bite-sized lessons on Duolingo. Learn any language from your native language with gamified content, streak tracking, and personalized tips!</p>
+    <img src="https://tse1.mm.bing.net/th?id=OIP.BL42GU_aMnS4PMvYP1qBKAHaEL&pid=Api&P=0&h=180.png" alt="Duolingo Experience" />
+    <a class="duolingo-button" href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer">Start Learning on Duolingo</a>
+
+    <div class="back-button">
+      <button onclick="window.location.href='index.html'">⬅️ Back to Home</button>
+    </div>
+  </div>
+</body>
+</html>
