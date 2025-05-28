@@ -124,6 +124,18 @@
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
 
+    // Voice language map for TTS
+    const langVoiceMap = {
+      en: 'en-US',
+      hi: 'hi-IN',
+      mr: 'mr-IN',
+      kn: 'kn-IN',
+      ta: 'ta-IN',
+      es: 'es-ES',
+      fr: 'fr-FR',
+      de: 'de-DE'
+    };
+
     btnStart.onclick = () => {
       translatedDiv.textContent = '🎤 Listening...';
       recognition.lang = sourceLang.value;
@@ -149,7 +161,7 @@
         translatedDiv.textContent = translatedText;
 
         const utterance = new SpeechSynthesisUtterance(translatedText);
-        utterance.lang = targetLang.value;
+        utterance.lang = langVoiceMap[targetLang.value] || targetLang.value;
         speechSynthesis.speak(utterance);
       } catch (err) {
         translatedDiv.textContent = "❌ Error: " + err.message;
