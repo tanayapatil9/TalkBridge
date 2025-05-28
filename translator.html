@@ -64,6 +64,13 @@
     .back-button {
       margin-top: 30px;
     }
+
+    .control-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   </style>
 </head>
 <body>
@@ -72,30 +79,34 @@
 
     <label for="sourceLang">From:</label>
     <select id="sourceLang">
-  <option value="en">English</option>
-  <option value="hi">Hindi</option>
-  <option value="es">Spanish</option>
-  <option value="fr">French</option>
-  <option value="de">German</option>
-  <option value="mr">Marathi</option>
-  <option value="kn">Kannada</option>
-  <option value="ta">Tamil</option>
-</select>
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="mr">Marathi</option>
+      <option value="kn">Kannada</option>
+      <option value="ta">Tamil</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+    </select>
 
-<label for="targetLang">To:</label>
-<select id="targetLang">
-  <option value="hi">Hindi</option>
-  <option value="en">English</option>
-  <option value="es">Spanish</option>
-  <option value="fr">French</option>
-  <option value="de">German</option>
-  <option value="mr">Marathi</option>
-  <option value="kn">Kannada</option>
-  <option value="ta">Tamil</option>
-</select>
+    <label for="targetLang">To:</label>
+    <select id="targetLang">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="mr">Marathi</option>
+      <option value="kn">Kannada</option>
+      <option value="ta">Tamil</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+    </select>
 
     <br><br>
-    <button id="btnStart">🎤 Start Speaking</button>
+    <div class="control-buttons">
+      <button id="btnStart">🎤 Start Listening</button>
+      <button id="btnStop">🛑 Stop Listening</button>
+    </div>
+
     <div id="translated">...</div>
 
     <div class="back-button">
@@ -105,6 +116,7 @@
 
   <script>
     const btnStart = document.getElementById('btnStart');
+    const btnStop = document.getElementById('btnStop');
     const translatedDiv = document.getElementById('translated');
     const sourceLang = document.getElementById('sourceLang');
     const targetLang = document.getElementById('targetLang');
@@ -116,6 +128,11 @@
       translatedDiv.textContent = '🎤 Listening...';
       recognition.lang = sourceLang.value;
       recognition.start();
+    };
+
+    btnStop.onclick = () => {
+      recognition.stop();
+      translatedDiv.textContent = "🛑 Stopped Listening.";
     };
 
     recognition.onresult = async (event) => {
